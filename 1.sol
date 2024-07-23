@@ -1,7 +1,10 @@
 contract C {
-    function f() internal returns (uint a) {
-        assembly {
-            a := shr(a, 8)
-        }
-    }
+    bool private isInit=false;
+ string private hello;
+ 
+ function init(string memory _hello) external {
+   hello = _hello;
+   isInit = true;
+ } 
+
 }
